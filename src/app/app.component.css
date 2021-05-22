@@ -22,6 +22,40 @@
   max-height: 150px;
   max-width: 190px;
 }
+.wrapper_mobile{
+  height: 100%;
+  width: 100%;
+  display: none;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  position: absolute;
+}
+.navigationMobile {
+  height: 100%;
+  display: none;
+  position: absolute;
+  bottom: 100px;
+  color: #ffff;
+  background-color: rgb(24, 26, 27);
+  opacity: 0.8;
+  width: 60%;
+}
+.navigationMobile p {
+  margin-left: 30px;
+  margin-top: 50px;
+}
+.contentMobile {
+  margin-top: 32px;
+}
+.closeButton {
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+
 .wrapper{
   display: flex;
 }
@@ -65,6 +99,7 @@
   display: flex;
   justify-content: flex-end;
 }
+
 .wrapper_image {
   margin-top: 10px;
   display: flex;
@@ -206,6 +241,9 @@
     display:block;
     margin-right: 40px ;
   }
+  .navigationMobile {
+    display: block;
+  }
   .cards {
     padding:10px 25px;;
   }
@@ -217,5 +255,8 @@
   .hamburgerIcon {
     display:block;
     margin-right: 40px ;
+  }
+  .navigationMobile {
+    display: block;
   }
 }

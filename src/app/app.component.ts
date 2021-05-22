@@ -8,19 +8,23 @@ import { TooltipPosition } from '@angular/material/tooltip';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
   text:string = ""
   searcherror:string = ""
   post:string=""
+  // comments:any[]
   showAlert = false
+  clickOn = true
   title = true
   posts:any[]
 
-  positionOptions:TooltipPosition[] = ['after', 'before', 'above', 'below', 'left', 'right'];
-  position = this.positionOptions[2]
+  positionOptions:TooltipPosition[] = ['above'];
+  position = this.positionOptions[0]
 
   constructor (private GetallPosts: AppService) {
     this.posts= []
+    // this.comments= []
   }
 
   confirmation (event:any) {
@@ -37,5 +41,6 @@ export class AppComponent implements OnInit {
   }
    async ngOnInit () {
       this.posts = await this.GetallPosts.getAllPosts()
+      // this.comments = await this.GetallPosts.getComments()
   }
 }

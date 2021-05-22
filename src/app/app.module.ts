@@ -7,8 +7,10 @@ import { AppComponent } from './app.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button'
+// import { MatBadgeModule } from '@angular/material/badge'
 import { MatIconModule } from '@angular/material/icon';
-import { MatTooltipModule } from '@angular/material/tooltip'
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { MatTooltipModule } from '@angular/material/tooltip'
     NoopAnimationsModule,
     MatIconModule,
     MatTooltipModule,
-    MatButtonModule
+    MatButtonModule,
+    // MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

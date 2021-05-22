@@ -1,13 +1,26 @@
   <header class="header">
     <img class="mainLogo" src="../assets/logo.png" alt="">
     <nav class="nav">
-      <mat-icon class="icon hamburgerIcon">menu</mat-icon>
+      <mat-icon (click)="clickOn= !clickOn" class="icon hamburgerIcon">{{clickOn ? 'close' : 'menu'}}</mat-icon>
       <p class="tab addNote">publique uma nota</p>
       <p class="tab">Profile</p>
       <p class="tab">Contact</p>
       <p class="tab">Work</p>
     </nav>
   </header>
+  <div *ngIf="clickOn" class="wrapper_mobile">
+    <div class="navigationMobile">
+      <div class="contentMobile">
+        <div class="closeButton">
+          <mat-icon (click)="clickOn = false" class="icon hamburgerIcon">close</mat-icon>
+        </div>
+        <p >publique uma nota</p>
+        <p >Profile</p>
+        <p >Contact</p>
+        <p >Work</p>
+      </div>
+    </div>
+  </div>
   <section class="wrapper">
     <div class="wrapper_posts">
       <div *ngFor="let post of posts" class="cards">
@@ -17,7 +30,7 @@
           </h2>
           <span class="bodyText">{{post.body}}</span>
           <div class="comments">
-            <mat-icon class="icon">chat_bubble</mat-icon>
+            <mat-icon  class="icon">chat_bubble</mat-icon>
           </div>
         </div>
       </div>
@@ -28,12 +41,8 @@
         <div class="searchField">
           <div class="wrapper_inputField">
             <input placeholder="Busque por um artigo..." [(ngModel)]="post" class="search" type="text">
-            <div class="contentWarning">
-              <div class="warningContent">
-                Busque pelo <span style="color:#753ceb; margin-left: 5px;">titulo</span>
-                <mat-icon class="icon close">close</mat-icon>
-              </div>
-              <mat-icon [matTooltipPosition]= "position" matTooltip="Busque pelo titulo" (mouseover)="showAlert = true" class="icon close">error_outline</mat-icon>
+            <div>
+              <mat-icon class="icon" [matTooltipPosition]= "position" matTooltip="Busque pelo titulo">error_outline</mat-icon>
             </div>
           </div>
           <div class="buttonsEvent">
