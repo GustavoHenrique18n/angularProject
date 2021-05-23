@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   post:string=""
   // comments:any[]
   showAlert = false
-  clickOn = true
+  clickOn = false
   title = true
   posts:any[]
 
@@ -31,13 +31,7 @@ export class AppComponent implements OnInit {
     this.text = event.email
   }
   searchPost () {
-     this.posts.find(item =>{
-      if(item.title == this.post){
-        return item
-      }else{
-        this.searcherror= `nenhum post com esse titulo encontrado: ${this.post}`
-      }
-    })
+
   }
    async ngOnInit () {
       this.posts = await this.GetallPosts.getAllPosts()
