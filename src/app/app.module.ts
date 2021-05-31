@@ -1,33 +1,40 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { DataBindingComponent } from './data-binding/data-binding.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button'
-// import { MatBadgeModule } from '@angular/material/badge'
-import { MatIconModule } from '@angular/material/icon';
-import { MatTooltipModule } from '@angular/material/tooltip';
 
+import { LoginComponent } from './login/login.component';
+import { PostsComponent } from './posts/posts.component';
+
+import { MaterialModule } from './share/material/material.module'
+import { FormsModule } from '@angular/forms';
+import { TarefasComponent } from './tarefas/tarefas.component';
+import { FolderComponent } from './share/dialogs/folder/folder.component';
+import { TasksComponent } from './share/dialogs/tasks/tasks.component';
+import { GroupComponent } from './group/group.component';
+import { NewGroupComponent } from './share/dialogs/new-group/new-group.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DataBindingComponent,
+    LoginComponent,
+    PostsComponent,
+    TarefasComponent,
+    FolderComponent,
+    TasksComponent,
+    GroupComponent,
+    NewGroupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     NoopAnimationsModule,
-    MatIconModule,
-    MatTooltipModule,
-    MatButtonModule,
-    // MatBadgeModule,
+    FormsModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

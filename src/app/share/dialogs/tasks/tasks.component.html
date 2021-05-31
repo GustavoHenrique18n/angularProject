@@ -1,0 +1,42 @@
+<div class="wrapper_field">
+  <mat-form-field appearance="fill" class="formField">
+    <mat-label class="folderSubtitle">Pesquisar</mat-label>
+    <input matInput>
+  </mat-form-field>
+  <button class="add"><mat-icon class="icon">add</mat-icon></button>
+</div>
+<div *ngFor="let task of tasks">
+  <div class="cards">
+    <p class="titleCard">
+      {{ task.titleTask }}
+    </p>
+    <mat-chip-list>
+      <mat-chip
+       [style.background]="chip.color"
+        *ngFor="let chip of task.reference"
+      >
+        {{ chip.nameChip }}
+      </mat-chip>
+    </mat-chip-list>
+    <div class="end">
+      <p class="userCreate">criada por : {{task.user}}</p>
+      <div>
+        <mat-icon
+          class="icon arrowIcon"
+          [routerLink]="['/post' , task.id]"
+        >
+          arrow_forward
+        </mat-icon>
+        <mat-icon
+          matBadge="1"
+          matBadgeColor="warn"
+          matBadgeSize="small"
+          class="icon"
+        >
+          link
+        </mat-icon>
+      </div>
+    </div>
+  </div>
+</div>
+

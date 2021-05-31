@@ -1,57 +1,53 @@
-  <header class="header">
-    <img class="mainLogo" src="../assets/logo.png" alt="">
-    <nav class="nav">
-      <mat-icon (click)="clickOn= !clickOn" class="icon hamburgerIcon">{{clickOn ? 'close' : 'menu'}}</mat-icon>
-      <p class="tab addNote">publique uma nota</p>
-      <p class="tab">Profile</p>
-      <p class="tab">Contact</p>
-      <p class="tab">Work</p>
-    </nav>
-  </header>
-  <div *ngIf="clickOn" class="wrapper_mobile">
-    <div class="navigationMobile">
-      <div class="contentMobile">
-        <div class="closeButton">
-          <mat-icon (click)="clickOn = false" class="icon hamburgerIcon">close</mat-icon>
+<section *ngIf="!loginOn;else layout_blank" class="wrapper">
+  <div [ngClass]="{navContent: miniNav, mininav:!miniNav }">
+    <div class="wrapperOrganization">
+      <div class="yourOrganization">
+        <div class="photoContainer">
+          <p class="organizationPhoto">org</p>
         </div>
-        <p >publique uma nota</p>
-        <p >Profile</p>
-        <p >Contact</p>
-        <p >Work</p>
+        <div>
+          <p  *ngIf="miniNav" class="nameOrganization">nome da organização <span class="workspace">workspace</span></p>
+        </div>
       </div>
+    </div>
+    <div class="wrapperMainContent">
+      <div class="mainContent">
+        <button class="btn">
+          <mat-icon class="icon">search</mat-icon>
+          <p *ngIf="miniNav">Pesquisar</p>
+        </button>
+        <button [routerLink]="['/posts']" class="btn">
+          <mat-icon class="icon">description</mat-icon>
+          <p *ngIf="miniNav">Geral</p>
+        </button>
+        <button [routerLink]="['/tarefas']" class="btn">
+          <mat-icon class="icon">task</mat-icon>
+          <p *ngIf="miniNav">minhas Tarefas</p>
+        </button>
+        <button [routerLink]="['/grupo']" class="btn">
+          <mat-icon class="icon">people</mat-icon>
+          <p *ngIf="miniNav">Grupo</p>
+        </button>
+      </div>
+      <div class="contentNotification">
+        <mat-icon (click)="miniNav = true" class="arrowBack falseArrow"*ngIf="!miniNav">arrow_forward_ios</mat-icon>
+        <button class="btn">
+          <mat-icon class="icon">notifications</mat-icon>
+          <p *ngIf="miniNav">Notificações</p>
+        </button>
+      </div>
+    </div>
+    <div class="footerNav">
+      <button class="contentProfile">
+        <mat-icon class="ownprofile icon">person</mat-icon>
+        <p *ngIf="miniNav">profile</p>
+      </button>
+      <mat-icon (click)="miniNav = false" class="arrowBack">{{!miniNav ? '' : 'arrow_back_ios' }}</mat-icon>
     </div>
   </div>
-  <section class="wrapper">
-    <div class="wrapper_posts">
-      <div *ngFor="let post of posts" class="cards">
-        <div  class="contentCard">
-          <h2>
-            <span class="titleText">{{post.title}}</span>
-          </h2>
-          <span class="bodyText">{{post.body}}</span>
-          <div class="comments">
-            <mat-icon  class="icon">chat_bubble</mat-icon>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="wrapper_image">
-      <div class="leftContent">
-        <img src="../assets/undraw_Notebook_re_id0r.svg">
-        <div class="searchField">
-          <div class="wrapper_inputField">
-            <input placeholder="Busque por um artigo..." [(ngModel)]="post" class="search" type="text">
-            <div>
-              <mat-icon class="icon" [matTooltipPosition]= "position" matTooltip="Busque pelo titulo">error_outline</mat-icon>
-            </div>
-          </div>
-          <div class="buttonsEvent">
-            <button (click)="searchPost()"class="searchButton">Buscar</button>
-            <span class="toDo">publique uma nota</span>
-          </div>
-          <p style="color: white;">{{searcherror}}</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <router-outlet></router-outlet>
+</section>
 
+<ng-template #layout_blank>
+  <router-outlet></router-outlet>
+</ng-template>

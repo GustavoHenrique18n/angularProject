@@ -1,0 +1,38 @@
+<div class="content">
+  <div>
+    <h1 class="folderTitle">Novo Grupo</h1>
+    <p class="folderSubtitle">Qual o nome do Grupo ?</p>
+    <mat-form-field appearance="fill" class="formField">
+      <mat-label class="folderSubtitle">nome do grupo</mat-label>
+      <input [(ngModel)]="newGroup.nameGroup" matInput>
+    </mat-form-field>
+    <p class="folderSubtitle">Selecione uma foto para o grupo</p>
+    <div class="add">
+      <label for="file"><mat-icon class="icon">file_upload</mat-icon></label>
+    </div>
+    <input type="file" id="file" class="file" >
+    <p class="folderSubtitle">Membros do grupo</p>
+    <mat-form-field appearance="fill" class="formField">
+      <mat-label class="folderSubtitle">Membros</mat-label>
+      <input
+        matInput
+        (keyup)="mentionedUser($event)"
+        [matAutocomplete]="auto"
+        [(ngModel)]="searchUser"
+      >
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option  (click)="confirmed(item)" *ngFor="let item of filterUsers">
+          {{item == undefined ? '': item.userName}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <div *ngFor="let item of filterUsers">
+      {{item == undefined ? '': item.userName}}
+    </div>
+    <p></p>
+  </div>
+  <div class="wrapper_btn">
+    <button mat-button class="btn"(click)="closeDialog()">Fechar</button>
+    <button mat-button [mat-dialog-close]="newGroup" class="btnConfirmed">Criar</button>
+  </div>
+</div>

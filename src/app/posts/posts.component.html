@@ -1,0 +1,55 @@
+<section class="content">
+  <div class="wrapper_header">
+    <div class="headerContent">
+      <div class="tabsContent">
+        <h1 class="title">Geral</h1>
+        <mat-tab-group>
+          <mat-tab label="Tarefas gerais"></mat-tab>
+        </mat-tab-group>
+      </div>
+      <div>
+        <button (click)="folderDialog()" class="newNote">
+          <mat-icon>add</mat-icon>
+          Crie uma nova pasta
+        </button>
+      </div>
+    </div>
+    <div class="searchField">
+      <mat-form-field  appearance="fill" class="btn">
+        <mat-label>Pesquisar</mat-label>
+        <input matInput placeholder="Pesquisar por pastas">
+      </mat-form-field>
+      <button class="btn sortBtn">
+        <mat-icon class="icon">sort_by_alpha</mat-icon>
+        <p>ordem alfabética</p>
+      </button>
+    </div>
+  </div>
+  <div class="rightContent">
+    <div class="notes">
+      <div>
+        <p> Atividade recente </p>
+      </div>
+      <div  *ngIf="folders.length == 0; else generalActivities" class="noNotes">
+        <div>
+          <h1 class="NoshowMessage">OOOPSS!! Por enquanto nada... <p class="subtitleNoGeneral">Por aqui você verá toda a atividade do seu grupo</p></h1>
+        </div>
+        <div>
+          <img class="noGeneral" src="./assets/nogeneral.svg">
+        </div>
+      </div>
+      <div>
+        <ng-template #generalActivities>
+          <div class="wrapper_folder">
+            <div *ngFor="let folder of folders">
+              <div class="folder">
+                <mat-icon (click)="showTasks(folder.id)" [style.color]="folder == undefined ? '' : folder.color" class="iconFolder">folder</mat-icon>
+                 {{folder == undefined ? '' : folder.folderName}}
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</section>

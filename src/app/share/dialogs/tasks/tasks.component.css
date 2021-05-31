@@ -1,0 +1,42 @@
+.wrapper_field {
+  display: flex;
+  justify-content: space-between;
+
+}
+.icon{
+  color: #a1a1a1;
+}
+.arrowIcon {
+  margin-right: 10px;
+}
+.add {
+  border: none;
+  height: 40px;
+  width: 50px;
+  border-radius: 7px;
+  background-color:#f0f2f5;
+  margin-right: 10px;
+}
+.cards {
+  margin-right: 20px;
+  margin-top: 25px;
+  height: auto;
+  width: 400px;
+  padding: 6px 15px;
+  border-radius: 10px;
+  background-color: #f0f2f5 ;
+}
+.titleCard {
+  font-size: 14px;
+  max-width: 400px;
+  color: #1b1b1b;
+}
+.userCreate{
+  font-size:10px;
+}
+.end {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+

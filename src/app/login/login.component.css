@@ -1,0 +1,134 @@
+img{
+  width: 50px;
+}
+.loginPage {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.containerImg{
+  display: flex;
+  flex-direction: column;
+  background-color: #292961;
+  height: 100%;
+  width: 50%;
+}
+.logoNav {
+  padding: 25px 25px;
+}
+.wrapper_img{
+  width: 100%;
+  height: 100%;
+}
+.loginImg{
+  width: 890px;
+}
+.greetleft {
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 32px;
+  letter-spacing: 1.0px;
+  max-width: 390px;
+  margin-left: 55px;
+}
+.containergrate {
+  display: flex;
+  font-weight: 500;
+  color: #fff;
+  align-items: center;
+}
+.icon {
+  margin-right: 60px;
+}
+.containerGreet {
+  max-width: 130px;
+  margin-left:10px;
+}
+
+.leftContainer {
+ width: 50%;
+}
+.greet {
+  color: black;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  width: 100%;
+}
+.warning {
+  color: #a1a1a1;
+  font-weight: 500;
+
+}
+.containerInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputField {
+  display:flex;
+  flex-direction: column;
+}
+.logo{
+  width: 500px;
+}
+input{
+  border: none;
+  margin-top: 15px;
+  height: 62px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  color: #a1a1a1;
+  letter-spacing: 0.7px;
+  background-color:transparent;
+  border: 1px solid #d3d3d3 ;
+  width: 409px;
+  padding: 0px 15px;
+  border-radius: 7px;
+}
+input::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  color: #a1a1a1;
+  letter-spacing: 0.7px;
+}
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  font-weight: 400;
+  color: #a1a1a1;
+}
+label {
+  color: #a1a1a1;
+  font-weight: 500;
+  margin-top: 15px;
+}
+button{
+  margin-top: 17px;
+  margin-bottom: 50px;
+  border: none;
+  height: 48px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 7px;
+  width: 100%;
+  background-color: #292961;
+}
+.register {
+  color: #a1a1a1;
+  font-weight: 400;
+}
+.registerPage {
+  color: #292961;
+}
+.protect {
+  color: #a1a1a1;
+  font-size: 8px;
+}
+.terms {
+  color: #292961;
+}

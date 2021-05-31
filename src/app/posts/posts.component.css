@@ -1,0 +1,106 @@
+.content{
+  width: 80vw;
+  padding: 0px 50px;
+}
+.rightContent {
+  width: 100%;
+}
+.title {
+  font-weight: 500;
+  letter-spacing: 1.0px;
+}
+.headerContent {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.newNote {
+  background-color: #292961;
+  border: none;
+  border-radius: 7px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  height: 40px;
+  padding: 0px 15px;
+  display: flex;
+  align-items: center;
+}
+.searchField{
+  display: flex;
+  justify-content: space-between;
+}
+.btn {
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #a1a1a1;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  margin-top: 25px;
+}
+.icon {
+  margin-right: 20px;
+}
+.sortBtn {
+  border: 1px solid #a1a1a1;
+  height: 40px;
+  border-radius: 7px;
+}
+.notes {
+  color: #a1a1a1;
+  font-weight: 500;
+  margin-top: 50px;
+}
+.NoshowMessage{
+  font-size: 32px;
+  font-weight: 500;
+  color: #a1a1a1;
+}
+.subtitleNoGeneral{
+  font-size:14px ;
+  font-weight: 400;
+}
+.noGeneral{
+  width:650px;
+}
+.publicNotes {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+.noNotes {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.cards {
+  margin-right: 20px;
+  margin-top: 25px;
+  height: auto;
+  width: 400px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f0f2f5 ;
+}
+
+.titleCard {
+  font-size: 14px;
+  max-width: 400px;
+  color: #696969;
+}
+.wrapper_folder{
+  display: flex;
+}
+.folder {
+  margin-right: 95px;
+}
+.iconFolder {
+  font-size: 200px;
+}
+

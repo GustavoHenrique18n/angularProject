@@ -1,0 +1,23 @@
+<section class="content">
+  <div class="tasks">
+    <h1 class="title">Tarefas</h1>
+    <mat-tab-group>
+      <mat-tab label="minhas tarefas"></mat-tab>
+    </mat-tab-group>
+  </div>
+  <div class="noTasks" *ngIf="myTasks.length == 0 ;else mytasks">
+    <div class="contentNoTasks">
+      <div>
+        <h1 class="NoshowMessage">Sem menções... <p class="subtitleNoGeneral">Tarefas vinculadas a você apareceram aqui.</p></h1>
+      </div>
+      <div>
+        <img class="noGeneral" src="./assets/noTasks.svg">
+      </div>
+    </div>
+  </div>
+  <ng-template #mytasks>
+    <div>
+      oii
+    </div>
+  </ng-template>
+</section>

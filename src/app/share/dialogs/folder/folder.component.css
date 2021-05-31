@@ -1,0 +1,42 @@
+.content{
+  width: 100%;
+}
+.folderTitle {
+  color: #a1a1a1;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+.folderSubtitle {
+  color: #a1a1a1;
+  font-weight: 400;
+}
+.mainContent{
+  height: 38vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.formField {
+  margin-bottom: 25px;
+}
+.inputField {
+  display: flex;
+  flex-direction: column;
+}
+.color {
+  border: none;
+  margin-top: 10px;
+}
+.wrapper_btn{
+  display: flex;
+  justify-content: flex-end;
+}
+.btn{
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+.btnConfirmed {
+  color: #292961;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}

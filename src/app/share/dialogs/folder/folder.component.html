@@ -1,0 +1,20 @@
+<div class="content">
+  <div class="mainContent">
+    <div>
+      <h1 class="folderTitle">Criar pasta</h1>
+      <p class="folderSubtitle">Qual o nome da pasta?</p>
+      <div class="inputField">
+        <mat-form-field appearance="fill" class="formField">
+          <mat-label class="folderSubtitle">nome da Pasta</mat-label>
+          <input  [(ngModel)]="data.folderName" matInput>
+        </mat-form-field>
+          <mat-label class="folderSubtitle">Cor da Pasta</mat-label>
+          <input type="color" [(ngModel)]="data.color" class="color folderSubtitle">
+      </div>
+    </div>
+    <div class="wrapper_btn">
+      <button mat-button class="btn"(click)="closeDialog()">Fechar</button>
+      <button [mat-dialog-close]="data"cdkFocusInitial mat-button class="btnConfirmed">Criar</button>
+    </div>
+  </div>
+</div>

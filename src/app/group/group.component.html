@@ -1,0 +1,23 @@
+<div class="content">
+  <div class="tabsContent">
+    <h1 class="title">Grupo</h1>
+    <mat-tab-group>
+      <mat-tab label="Tarefas gerais"></mat-tab>
+    </mat-tab-group>
+  </div>
+  <div *ngIf="groups.length == 0;else groupsOn" class="mainContent">
+    <div>
+      <h1 class="NoshowMessage">Ainda nenhum grupo... <p class="subtitleNoGeneral">comece criando um.</p></h1>
+      <button (click)="addGroup()" class="newNote">
+      <mat-icon class="add">add</mat-icon>
+         criar grupo
+      </button>
+    </div>
+    <div>
+      <img class="noGroup" src="./assets/nogroup.svg">
+    </div>
+  </div>
+  <ng-template #groupsOn>
+    <p>to aqui</p>
+  </ng-template>
+</div>

@@ -1,0 +1,33 @@
+.content{
+  width: 80vw;
+  height: 60vh;
+  padding: 0px 50px;
+}
+.title {
+  font-weight: 500;
+  letter-spacing: 1.0px;
+}
+.tasks {
+  max-width: 160px;
+}
+.noTasks{
+  height: 50vh;
+}
+.contentNoTasks {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin-top: 50px;
+}
+.NoshowMessage{
+  font-size: 32px;
+  font-weight: 500;
+  color: #a1a1a1;
+}
+.subtitleNoGeneral{
+  font-size:14px ;
+  font-weight: 400;
+}
+.noGeneral{
+  width: 650px;
+}
