@@ -7,6 +7,7 @@ import { TarefasComponent } from './tarefas/tarefas.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
+  // POSTS VAI TER ROTAS FILHAS
   {path:'posts', component: PostsComponent},
   {path:'tarefas', component: TarefasComponent},
   {path:'grupo', component: GroupComponent},
