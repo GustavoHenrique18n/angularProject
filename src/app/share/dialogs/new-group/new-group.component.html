@@ -7,29 +7,37 @@
       <input [(ngModel)]="newGroup.nameGroup" matInput>
     </mat-form-field>
     <p class="folderSubtitle">Selecione uma foto para o grupo</p>
-    <div class="add">
-      <label for="file"><mat-icon class="icon">file_upload</mat-icon></label>
+    <div class="container_photo">
+      <div class="add">
+        <label for="file"><mat-icon class="icon">file_upload</mat-icon></label>
+        <input #fileInput (change)="files()" accept='image/*' type="file" id="file">
+      </div>
+      <div class="organizationPhoto" >
+        <span *ngIf="!preview" class="preview">Preview</span>
+        <img *ngIf="preview" class="previewPhoto" [src]="file">
+      </div>
     </div>
-    <input type="file" id="file" class="file" >
     <p class="folderSubtitle">Membros do grupo</p>
     <mat-form-field appearance="fill" class="formField">
       <mat-label class="folderSubtitle">Membros</mat-label>
       <input
-        matInput
-        (keyup)="mentionedUser($event)"
-        [matAutocomplete]="auto"
-        [(ngModel)]="searchUser"
+      matInput
+      (keyup)="mentionedUser($event)"
+      [matAutocomplete]="auto"
+      [(ngModel)]="searchUser"
       >
       <mat-autocomplete #auto="matAutocomplete">
-        <mat-option  (click)="confirmed(item)" *ngFor="let item of filterUsers">
-          {{item == undefined ? '': item.userName}}
+        <mat-option *ngIf="openOption" (click)="confirmed(userProperty)">
+          <img class="avatar" [src]="userProperty.profilePhoto" >
+          {{userProperty.userName}}
         </mat-option>
       </mat-autocomplete>
     </mat-form-field>
-    <div *ngFor="let item of filterUsers">
-      {{item == undefined ? '': item.userName}}
+    <div class="members" *ngIf="selectedMember">
+      <div *ngFor="let members of newGroup.userGroup">
+        <img class="avatarSelected" [src]="members.profilePhoto">
+      </div>
     </div>
-    <p></p>
   </div>
   <div class="wrapper_btn">
     <button mat-button class="btn"(click)="closeDialog()">Fechar</button>

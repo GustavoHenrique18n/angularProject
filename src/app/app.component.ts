@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GroupService } from './group/group.service';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent implements OnInit {
+  groups:any[]=[]
   miniNav:boolean = true
+  noPhoto:string[] = []
   loginOn:boolean = false
-  constructor () {}
+  constructor (
+    private group: GroupService
+  ) {}
 
-  ngOnInit () {}
+  ngOnInit () {
+   this.groups = this.group.groups()
+
+     this.groups.forEach(value => {
+    const groupName = value.nameGroup
+    const noProfilePhoto = [...groupName]
+    this.noPhoto= noProfilePhoto.slice(0,1)
+
+  })
+
+  }
 }

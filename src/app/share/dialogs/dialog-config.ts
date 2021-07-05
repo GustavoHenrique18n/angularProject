@@ -19,3 +19,22 @@ export default {
   }
 }
 
+
+/*class Configmodal {
+   width:String= "";
+   height: String= "";
+  configFolderModal () {
+      this.width= '400px',
+      this.height= '450px'
+  }
+  configTasksModal () {
+      this.width= '500px',
+      this.height= '700px'
+  }
+  configGroupModal () {
+      this.width= '500px',
+      this.height= '650px'
+  }
+}
+export const Config = new Configmodal()*/
+

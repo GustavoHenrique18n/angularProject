@@ -11,8 +11,8 @@ import { NewGroupComponent } from '../share/dialogs/new-group/new-group.componen
   styleUrls: ['./group.component.css']
 })
 export class GroupComponent implements OnInit {
-  groups:any[] =[]
-  newgroup = {}
+  groups:any[]= []
+  newgroup= {}
 
   constructor (
     private group: GroupService,
@@ -25,10 +25,11 @@ export class GroupComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result  => {
     if(result != undefined){
       console.log(result)
-      this.groups = this.group.groups()
       this.groups.push(result)
     }
-   });
+  });
+}
+ngOnInit () {
+  this.groups = this.group.groups()
   }
-  ngOnInit () {}
 }

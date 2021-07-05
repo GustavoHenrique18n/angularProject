@@ -18,6 +18,34 @@
     </div>
   </div>
   <ng-template #groupsOn>
-    <p>to aqui</p>
+    <div class="container_group">
+      <div *ngFor="let groupProperty of groups">
+        <p class="partiners">{{ groupProperty.userGroup.length }} {{groupProperty.userGroup.length >=2 ? 'membros' : 'membro' }}</p>
+        <div class="wrapper_info">
+          <span class="nameGroup">{{ groupProperty.nameGroup }}</span>
+          <span class="owner"> Criado por {{ groupProperty.owner }}</span>
+        </div>
+      </div>
+      <div>
+        <button class="newMember">
+          <mat-icon class="iconAdd">add</mat-icon>
+          <span class="addText">Adicionar novo membro</span>
+        </button>
+      </div>
+      <div *ngFor="let groupProperty of groups" class="wrapper_partners">
+        <div *ngFor="let partners of groupProperty.userGroup" class="containerPartners">
+          <div class="partner">
+            <div class="userSide">
+              <img class="avatar" [src]="partners.profilePhoto">
+              <p class="userName">{{partners.userName}}</p>
+            </div>
+            <div>
+              <mat-icon class="iconAdmin">admin_panel_settings</mat-icon>
+              <mat-icon class="icon">remove</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </ng-template>
 </div>

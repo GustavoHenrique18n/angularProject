@@ -43,3 +43,80 @@
 .noGroup{
   width:550px;
 }
+.container_group {
+  margin-top: 55px;
+}
+.partiners{
+  color: #a1a1a1;
+  font-size: 14px;
+  font-weight: 400;
+}
+.nameGroup {
+  color: #a1a1a1;
+  font-size: 32px;
+  font-weight: 500;
+  margin-right: 50px;
+}
+.owner {
+  font-size: 12px;
+  color: #a1a1a1;
+  font-weight: 300;
+}
+.wrapper_info {
+  display: flex;
+  align-items: center;
+}
+.newMember {
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 0px 10px;
+  height: 40px;
+  border-radius: 7px;
+  background-color:#f0f2f5;
+  margin-top: 40px;
+}
+.iconAdd {
+  color: #a1a1a1;
+  margin-right: 8px;
+}
+.addText {
+  color: #a1a1a1;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight:400;
+}
+.wrapper_partners {
+  margin-top: 30px;
+  width: 50%;
+  padding: 20px 30px;
+  border-radius: 12px;
+}
+.partner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.userSide {
+  display: flex;
+}
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  margin-right: 12px;
+  border-radius: 50%;
+}
+.userName {
+  color: #414141;
+  font-size: 14px;
+  font-weight: 400;
+}
+.iconAdmin {
+  color: #a1a1a1;
+}
+.icon {
+  color: #a1a1a1;
+  margin-left: 10px;
+}

@@ -2,15 +2,31 @@
 <!--- DEPOIS DO GUARD ISSO FUNCIONA-- TELAS  QUE NAO PRECISAM DE LOGIN A BARRA NAO APARECE-->
 <section *ngIf="!loginOn;else layout_blank" class="wrapper">
   <div [ngClass]="{navContent: miniNav, mininav:!miniNav }">
-    <div class="wrapperOrganization">
-      <div class="yourOrganization">
-        <div class="photoContainer">
-          <p class="organizationPhoto">org</p>
-        </div>
-        <div>
-          <p  *ngIf="miniNav" class="nameOrganization">nome da organização <span class="workspace">workspace</span></p>
-        </div>
+    <div  class="wrapperOrganization">
+      <div class="wrapper_buttonNoGroup" *ngIf="groups.length == 0;else actuallyGroup">
+        <button [routerLink]="['/grupo']" class="btn">
+          <span *ngIf="miniNav" class="textCreate">Crie um grupo</span>
+          <mat-icon class="iconNoGroup">arrow_forward</mat-icon>
+        </button>
       </div>
+      <ng-template #actuallyGroup>
+        <div *ngFor="let groupProperty of groups"  class="yourOrganization">
+          <div class="photoContainer">
+            <img [routerLink]="['/grupo']"  [src]="groupProperty.organizationPhoto" *ngIf="groupProperty.organizationPhoto;else slicePhoto" class="organizationPhoto">
+            <ng-template #slicePhoto>
+              <div [routerLink]="['/grupo']" class="organizationPhoto">
+                <p *ngFor="let photo of noPhoto">
+                  {{ photo | uppercase }}
+                </p>
+              </div>
+            </ng-template>
+          </div>
+          <div  [routerLink]="['/grupo']" class="nameOrganization">
+            <span *ngIf="miniNav">{{groupProperty.nameGroup | uppercase }}</span><br>
+            <span *ngIf="miniNav" class="workspace">workspace</span>
+          </div>
+        </div>
+      </ng-template>
     </div>
     <div class="wrapperMainContent">
       <div class="mainContent">
@@ -18,22 +34,23 @@
           <mat-icon class="icon">search</mat-icon>
           <p *ngIf="miniNav">Pesquisar</p>
         </button>
-        <button [routerLink]="['/posts']" class="btn">
-          <mat-icon class="icon">description</mat-icon>
+        <button [routerLink]="['/posts']" routerLinkActive="activeRoute" class="btn">
+          <mat-icon class="icon" >description</mat-icon>
           <p *ngIf="miniNav">Geral</p>
         </button>
-        <button [routerLink]="['/tarefas']" class="btn">
+        <button [routerLink]="['/tarefas']" routerLinkActive="activeRoute" class="btn">
           <mat-icon class="icon">task</mat-icon>
           <p *ngIf="miniNav">minhas Tarefas</p>
+          <p class="dd">oii</p>
         </button>
-        <button [routerLink]="['/grupo']" class="btn">
+        <button [routerLink]="['/grupo']" routerLinkActive="activeRoute" class="btn">
           <mat-icon class="icon">people</mat-icon>
           <p *ngIf="miniNav">Grupo</p>
         </button>
       </div>
       <div class="contentNotification">
         <mat-icon (click)="miniNav = true" class="arrowBack falseArrow"*ngIf="!miniNav">arrow_forward_ios</mat-icon>
-        <button class="btn">
+        <button routerLinkActive="activeRoute" class="btn">
           <mat-icon class="icon">notifications</mat-icon>
           <p *ngIf="miniNav">Notificações</p>
         </button>
